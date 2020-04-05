@@ -1,26 +1,42 @@
+before-setting()
+	content: 'Fortune / La fortune / 運勢 / 运势 / フォーチュン / 운 / onni / фортуна / भाग्य / ကံဇာတာ';
+	font-size: 60px;
+	z-index: 0;
+	position: absolute;
+	top: 5%;
+	padding: 3%
+	color: #fff;
+
 body
 	margin 0
 
 .number-analysis
 	background-color: #FFF6EC
 
-	&:before
-		content: 'Fortune, La fortune, 運勢, 运势, フォーチュン, 운';
-		font-size: 60px;
-		z-index: 0;
-		position: absolute;
-		top: 5%;
-		padding: 3%
-		color: #fff;
-	
-	&:after
-		content: 'Energy, Énergie, 能量, 能量, エネルギー, 에너지'
-		font-size: 60px;
-		z-index: 0;
-		position: absolute;
-		bottom: 23%;
-		padding: 3%
-		color: #fff;
+	@media only screen and (max-width: 477px)
+		&:before
+			before-setting()
+	@media only screen and (min-width: 477px) and (max-width: 600px)
+		&:before
+			before-setting()
+			content: 'Fortune / La fortune / 運勢 / 运势 / フォーチュン / 운 / onni / фортуна / भाग्य / ကံဇာတာ / Amahirwe / அதிர்ஷ்டம்';
+	@media only screen and (min-width: 601px) and (max-width: 900px)
+		&:before
+			before-setting()
+			content: 'Fortune / La fortune / 運勢 / 运势 / フォーチュン / 운 / onni / фортуна / भाग्य / ကံဇာတာ / Amahirwe / அதிர்ஷ்டம் / Räichtum / הון';
+	@media only screen and (min-width: 901px) and (max-width: 1200px)
+		&:before
+			before-setting()
+			content: 'Fortune / La fortune / 運勢 / 运势 / フォーチュン / 운 / onni / фортуна / भाग्य / ကံဇာတာ / Amahirwe / அதிர்ஷ்டம் / Räichtum / הון / Glück / خوش قسمتی / sreća';
+	@media only screen and (min-width: 1201px) and (max-width: 1500px)
+		&:before
+			before-setting()
+			content: 'Fortune / La fortune / 運勢 / 运势 / フォーチュン / 운 / onni / фортуна / भाग्य / ကံဇာတာ / Amahirwe / அதிர்ஷ்டம் / Räichtum / הון / Glück / خوش قسمتی / sreća / Բախտը / Bəxt / அதிர்ஷ்டம் / ভাগ্য';
+	@media only screen and (min-width: 1501px) and (max-width: 1800px)
+		&:before
+			before-setting()
+			content: 'Fortune / La fortune / 運勢 / 运势 / フォーチュン / 운 / onni / фортуна / भाग्य / ကံဇာတာ / Amahirwe / அதிர்ஷ்டம் / Räichtum / הון / Glück / خوش قسمتی / sreća / Բախտը / Bəxt / அதிர்ஷ்டம் / ভাগ্য';
+			font-size: 72px
 
 	.MuiAppBar-root
 		background-color: #FEC179
