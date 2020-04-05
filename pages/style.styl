@@ -1,0 +1,88 @@
+body
+	margin 0
+
+.number-analysis
+	background-color: #FFF6EC
+
+	&:before
+		content: 'Fortune, La fortune, 運勢, 运势, フォーチュン, 운';
+		font-size: 60px;
+		z-index: 0;
+		position: absolute;
+		top: 5%;
+		padding: 3%
+		color: #fff;
+	
+	&:after
+		content: 'Energy, Énergie, 能量, 能量, エネルギー, 에너지'
+		font-size: 60px;
+		z-index: 0;
+		position: absolute;
+		bottom: 23%;
+		padding: 3%
+		color: #fff;
+
+	.MuiAppBar-root
+		background-color: #FEC179
+	.phone
+		background-color: #ffffff
+		margin-top: 100px
+		margin-bottom: 100px
+		width: 300px
+		height: 600px
+		border: 1px solid #C4C4C4
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		border-radius: 26px;
+		z-index: 1
+
+		.speaker
+			border: 1px solid #C4C4C4
+			width: 60px
+			height: 4px
+			margin: 10px auto
+			border-radius: 4px
+			background: #C4C4C4
+			margin-bottom: 8%
+			margin-top: 8%
+
+			> .front-camera
+				position: relative
+				width: 8px
+				height: 8px
+				border-radius: 50%
+				background: #C4C4C4
+				top: -2px
+				left: -28px
+
+		.screen
+			border: 1px solid #E5E5E5;
+			width: 90%;
+			height: 80%;
+			margin: 0 auto;
+			background: #E5E5E5
+			text-align: center
+			> .MuiTypography-subtitle1
+				padding: 6% 2% 2% 2%
+				color: #c4c4c4
+			.MuiFormControl-root
+				background-color: #ffffff
+				margin: 5% 0 13% 0
+				& fieldset
+					border: #353535
+				& label,
+				& label.Mui-focused
+					color: #353535
+			button
+				background-color: #FFECD7
+
+		.home
+			border: 2px solid #C4C4C4;
+			width: 40px;
+			height: 40px;
+			margin: 10px auto;
+			border-radius: 35px;
+			box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.15)
+	footer
+		background-color: #EF831F
+		padding: 5px 10px
+		color: #ffffff

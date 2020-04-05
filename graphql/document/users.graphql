@@ -1,0 +1,15 @@
+fragment User on User {
+  ...Node
+  firstName
+  lastName
+  # email
+  # createdAt
+  # updatedAt
+  # password
+}
+
+query GetAllUsers {
+  allUsers {
+    ...User
+  }
+}

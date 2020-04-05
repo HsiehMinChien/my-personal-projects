@@ -1,0 +1,14 @@
+fragment Post on Post {
+  ...Node
+  createdAt
+  title
+  updatedAt
+  url
+  votes
+}
+
+query GetAllPosts {
+  allPosts {
+    ...Post
+  }
+}

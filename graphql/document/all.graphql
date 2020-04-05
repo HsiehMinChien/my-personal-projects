@@ -1,0 +1,11 @@
+query GetAll {
+  allUsers {
+    ...User
+  }
+  allFiles {
+    ...File
+  }
+  allPosts {
+    ...Post
+  }
+}

@@ -1,0 +1,17 @@
+overwrite: true
+schema: "https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn"
+documents: "graphql/document/**/*.graphql"
+generates:
+  graphql/generate_file/index.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - fragment-matcher
+      - typescript-resolvers
+      - add:
+          placement: "append"
+          content:
+            - "// Demo for nextjs with typescript graphql redux"
+      - time:
+        format: DD.MM.YY

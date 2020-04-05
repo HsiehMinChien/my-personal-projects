@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Enzyme Clock component first test 1`] = `ShallowWrapper {}`;
