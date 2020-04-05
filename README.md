@@ -22,13 +22,9 @@ This project is for demo next.js with Typescript, redux, graphQL(apollo), and gr
   npm run test
 ```
 
-## GraphQL api resource (Play ground)
-
-- From [nextjs with apollo and redux](https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn)
-
 ## Simple online demo
 
-[Online demo](https://nextjs-with-typescript-graphql-redux-7x4xuh9we.now.sh)
+[Online demo](https://analysis-phone-number.mediocre0528.now.sh/)
 
 ## Reference
 
