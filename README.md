@@ -13,7 +13,7 @@ This project is for demo next.js with Typescript, redux, graphQL(apollo), and gr
 
 ```
   npm install
-  npm gen
+  npm run gen
 ```
 
 ## Perform unit test
