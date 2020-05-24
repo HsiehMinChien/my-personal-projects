@@ -80,6 +80,9 @@ body
 			> .MuiTypography-subtitle1
 				padding: 6% 2% 2% 2%
 				color: #c4c4c4
+				&.analysis-result
+					opacity: 1
+					transition: opacity 1s linear
 			.MuiFormControl-root
 				background-color: #ffffff
 				margin: 5% 0 13% 0
@@ -89,11 +92,12 @@ body
 				& label.Mui-focused
 					color: #353535
 			.customize-paper
+				border: 0
 				background-color: #C4C4C4
-				padding: 15px
-				margin: 5px 5px 15px 5px
+				padding: 5px 15px
+				margin: 5px 5px 5px 5px
 				p
-					margin-bottom: 10px
+					margin: 10px 0
 					text-align: left
 			button
 				background-color: #FFECD7
@@ -108,4 +112,10 @@ body
 	footer
 		background-color: #EF831F
 		padding: 5px 10px
+		color: #ffffff
+
+.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiPaper-elevation16
+	background-color: #fec179
+	color: #ffffff
+	svg
 		color: #ffffff

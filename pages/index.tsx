@@ -5,16 +5,26 @@ import withApollo from "../lib/with-apollo";
 import { withRedux } from "../lib/redux";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
+import Drawer from "@material-ui/core/Drawer";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import Divider from "@material-ui/core/Divider";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
 import Paper from "../components/paper";
+import { GetAllPostsComponent } from "../graphql/generate_file";
 import "./style.styl";
 
 function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   const [isAnalysis, setIsAnalysis] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   function _renderAnalysis() {
@@ -22,12 +32,14 @@ function Home() {
       return (
         <Paper>
           <Typography>您的手機號碼：{phoneNumber}</Typography>
+          <Divider />
           <Typography>
             解析：
             <br />
             有主見、目標。注意工作或感情上太付出而累垮自己。容易白忙一場。
             ＊容易壓力大、操勞而導致肩緊痠痛、 睡不好、嗜睡或失眠
           </Typography>
+          <Divider />
           <Typography>
             數字磁場： <br />
             [91]：延年1 <br />
@@ -72,7 +84,14 @@ function Home() {
       <div>
         <AppBar position="fixed">
           <Toolbar variant="dense">
-            <IconButton edge="start" color="inherit" aria-label="menu">
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit">
@@ -80,6 +99,26 @@ function Home() {
             </Typography>
           </Toolbar>
         </AppBar>
+        <Drawer open={isOpen}>
+          <div role="presentation">
+            <List>
+              {["手機數字分析", "車牌分析"].map((text, index) => (
+                <ListItem
+                  button
+                  key={text}
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                >
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              ))}
+            </List>
+          </div>
+        </Drawer>
         <Grid container justify="center">
           <div className="phone">
             <div className="speaker">
