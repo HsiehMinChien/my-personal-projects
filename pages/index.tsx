@@ -50,7 +50,7 @@ function Home() {
           id="outlined-basic"
           label="輸入您的手機號碼"
           variant="outlined"
-          onChange={e => setPhoneNumber(e.target.value)}
+          onChange={(e) => setPhoneNumber(e.target.value)}
         />
       </>
     );
