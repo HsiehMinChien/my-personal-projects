@@ -4,23 +4,13 @@ import { compose } from "redux";
 import withApollo from "../lib/with-apollo";
 import { withRedux } from "../lib/redux";
 import Button from "@material-ui/core/Button";
-import AppBar from "@material-ui/core/AppBar";
-import Drawer from "@material-ui/core/Drawer";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Divider from "@material-ui/core/Divider";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import Paper from "../components/paper";
-import { GetAllPostsComponent } from "../graphql/generate_file";
+import AppBar from "../components/appbar";
+import Drawer from "../components/drawer";
 import "./style.styl";
 
 function Home() {
@@ -82,43 +72,8 @@ function Home() {
         />
       </Head>
       <div>
-        <AppBar position="fixed">
-          <Toolbar variant="dense">
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={() => {
-                setIsOpen(true);
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" color="inherit">
-              手機數字磁場分析
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Drawer open={isOpen}>
-          <div role="presentation">
-            <List>
-              {["手機數字分析", "車牌分析"].map((text, index) => (
-                <ListItem
-                  button
-                  key={text}
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                >
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
-            </List>
-          </div>
-        </Drawer>
+        <AppBar title="手機數字磁場分析" onClickIconButton={setIsOpen} />
+        <Drawer isOpen={isOpen} onClickListItem={setIsOpen} />
         <Grid container justify="center">
           <div className="phone">
             <div className="speaker">
