@@ -6,9 +6,9 @@ import Moment from "moment";
 import Big from "big.js";
 import "./style.styl";
 
-const PREFIX_CLASS = "stock-price-count-page";
+const PREFIX_CLASS = "count-stock-price-page";
 
-export default function Count() {
+export default function CountStockPrice() {
   const [stockName, setStockName] = useState("");
   const [money, onChangeMomey] = useState(0);
   const [rate, onChangeRage] = useState(0);
@@ -29,14 +29,16 @@ export default function Count() {
 
   return (
     <div className={PREFIX_CLASS}>
+      <h1 className="page-title">股票月曆表</h1>
       <div className="basic-input">
         <div>
-          股票名稱:
-          <Input onChange={(e) => setStockName(e.target.value)} />
+          <label className="stock-name" htmlFor="stock-name">股票名稱:</label>
+          <Input id="stock-name" size="large" onChange={(e) => setStockName(e.target.value)} />
         </div>
         <div>
-          起始股價:
+          <label className="stock-start-price" htmlFor="stock-start-price">起始股價:</label>
           <InputNumber
+            id="stock-start-price"
             size="large"
             onChange={_handleOnChangeMomey}
             value={money}
@@ -44,8 +46,9 @@ export default function Count() {
           />
         </div>
         <div>
-          利率(%):
+          <label className="rate" htmlFor="rate">漲跌率(%):</label>
           <InputNumber
+            id="rate"
             size="large"
             onChange={_handleOnChangeRate}
             value={rate}
@@ -53,10 +56,10 @@ export default function Count() {
             max={10}
           />
         </div>
-        <p>請選擇下方的月曆，選定開始跟結束日期後會自動算出漲跌價格</p>
+        <p className="notice">請選擇下方的月曆，選定開始跟結束日期後會自動算出漲跌價格</p>
       </div>
-      <h1 className={cx({ isRise: rate > 0 }, { isDown: rate < 0 })}>
-        {stockName}
+      <h1 className={cx('stock-name', { isRise: rate > 0 }, { isDown: rate < 0 })}>
+        {`股票名稱: ${stockName}`}
       </h1>
       <ReactCalander
         selectRange
@@ -65,15 +68,12 @@ export default function Count() {
         tileContent={(args: any) => {
           const { date } = args;
 
-          if (
-            date.getTime() >= startDate.getTime() &&
-            date.getTime() <= endDate.getTime()
-          ) {
+          if (inSelectedRegion(date, startDate, endDate)) {
             const range = getRange(date, startDate);
             const totalRate = new Big(100 + rate || 0).div(100).pow(range);
             const currentMomey = new Big(money || 0).times(totalRate);
 
-            if (Moment(date).weekday() !== 0 && Moment(date).weekday() !== 6) {
+            if (isTranstionDay(date)) {
               return (
                 <div>
                   <div
@@ -93,9 +93,20 @@ export default function Count() {
           );
         }}
       />
-      <div className="notice">本試算表僅供參考，實際金額以股市為準。</div>
+      <div className="calender-notice">本試算表僅供參考，實際金額以股市為準。</div>
     </div>
   );
+}
+
+function inSelectedRegion(date: Date, startDate: Date, endDate: Date) {
+  return (
+    date.getTime() >= startDate.getTime() &&
+    date.getTime() <= endDate.getTime()
+  );
+}
+
+function isTranstionDay(date: Date) {
+  return Moment(date).weekday() !== 0 && Moment(date).weekday() !== 6
 }
 
 function getRange(endDate: Date, startDate: Date) {
