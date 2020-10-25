@@ -1,4 +1,4 @@
-import React from 'react';
+import { ForwardRefExoticComponent, memo } from 'react';
 import cx from 'classnames';
 import './style.styl';
 
@@ -10,7 +10,7 @@ function FixedIcon({
   onClickIcon,
 }: {
   className: string,
-  IconComponent: React.ForwardRefExoticComponent<any>,
+  IconComponent: ForwardRefExoticComponent<any>,
   onClickIcon: () => void,
 }) {
   console.log('FixedIcon')
@@ -21,6 +21,4 @@ function FixedIcon({
   );
 }
 
-const MemoFixedIcon = React.memo(FixedIcon);
-
-export default MemoFixedIcon;
+export default memo(FixedIcon);

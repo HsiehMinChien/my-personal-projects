@@ -3,6 +3,7 @@ import { Modal, Switch } from 'antd';
 import cx from 'classnames';
 import { SettingOutlined } from '@ant-design/icons';
 import FixedIcon from '../../components/fixed-icon';
+import ContentContainer from '../../components/content-container';
 import './style.styl';
 
 const PREFIX_CLASS = 'resume';
@@ -20,9 +21,13 @@ export default function Resume() {
   return (
     <div className={cx(PREFIX_CLASS, { 'dark-mode': isDarkMode })}>
       <div className={`${PREFIX_CLASS}__left`}>
-        <div></div>
+        <div>left</div>
       </div>
-      <div className={`${PREFIX_CLASS}__right`}></div>
+      <div className={`${PREFIX_CLASS}__right`}>
+        <ContentContainer title="Expreience">
+          Experience
+        </ContentContainer>
+      </div>
       <Modal
         title="Setting"
         okText="Close"
