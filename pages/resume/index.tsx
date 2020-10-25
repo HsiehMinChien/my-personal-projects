@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { Modal, Switch } from 'antd';
 import cx from 'classnames';
 import { SettingOutlined } from '@ant-design/icons';
+import FixedIcon from '../../components/fixed-icon';
 import './style.styl';
 
 const PREFIX_CLASS = 'resume';
@@ -37,9 +38,11 @@ export default function Resume() {
           onChange={value => setIsDarkMode(value)}
         />
       </Modal>
-      <div className="setting-icon">
-        <SettingOutlined onClick={_handleOpenModal} />
-      </div>
+      <FixedIcon
+        IconComponent={SettingOutlined}
+        className="setting-icon"
+        onClickIcon={_handleOpenModal}
+      />
     </div>
   );
 }
