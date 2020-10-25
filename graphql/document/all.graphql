@@ -1,11 +1,13 @@
-query GetAll {
-  allUsers {
-    ...User
+query GetSystemInfo {
+  getSystemInfo {
+    ...System
   }
-  allFiles {
-    ...File
-  }
-  allPosts {
-    ...Post
-  }
+}
+
+fragment System on System {
+  title
+  describe
+  createdAt
+  tags
+  createdBy
 }

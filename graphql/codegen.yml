@@ -1,5 +1,5 @@
 overwrite: true
-schema: "https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn"
+schema: "https://nestjs-demo-project.herokuapp.com/graphql"
 documents: "graphql/document/**/*.graphql"
 generates:
   graphql/generate_file/index.tsx:
