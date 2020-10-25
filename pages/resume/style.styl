@@ -2,6 +2,7 @@
   height: 100vh
   background-color: #eee
   display: flex
+  padding: 30px
 
   &__left
     width: 40%
@@ -9,11 +10,55 @@
   &__right
     width: 60%
 
-  &.dark-mode
-    background-color: #252525
-    .setting-icon
-      opacity: 0.4
-
   .setting-icon
     bottom: 90px
     right: 20px
+  
+  .content-container
+    & + .content-container
+      margin-top: 30px
+
+    &.about-me
+      .content-container__content
+        display: flex
+        margin-top: 25px
+
+        img
+          width: 150px
+          border-radius: 50%
+
+        .intrduction
+          padding: 15px 25px
+
+          .detail
+            display: flex
+            margin-top: 20px
+            color: #AEB6BF
+            & + .detail
+              margin-top: 5px
+
+            > div
+              width: 50%
+              display: flex
+
+              p
+                color: #000
+                font-weight: 600
+                margin-left: 5px
+
+          h3
+            font-weight: 800
+
+        .download-button
+          margin-top: 20px
+
+  &.dark-mode
+    background-color: #252525
+
+    .setting-icon
+      opacity: 0.4
+
+    .fixed-icon
+      &:hover
+        opacity: 1
+        box-shadow: 0px 6px 15px 0px rgba(255,255,255,.2)

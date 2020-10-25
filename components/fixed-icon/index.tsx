@@ -13,7 +13,6 @@ function FixedIcon({
   IconComponent: ForwardRefExoticComponent<any>,
   onClickIcon: () => void,
 }) {
-  console.log('FixedIcon')
   return (
     <div className={cx(PREFIX_CLASS, className)}>
       <IconComponent onClick={onClickIcon} />
