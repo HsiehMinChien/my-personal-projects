@@ -1,5 +1,5 @@
 .resume
-  height: 100vh
+  height: 100%
   background-color: #eee
   display: flex
   padding: 30px
@@ -63,6 +63,34 @@
 
           &-content
             top: -8.5px
+
+    &.skills
+      .content-container__content
+        display: flex
+        flex-wrap: wrap
+        margin-top: 25px
+
+        .detail
+          font-size: 18px
+          width: fit-content
+          border-radius: 20px
+          padding: 5px 10px
+          margin: 5px
+          color: #ffffff
+          font-weight: 600
+
+          &
+            background-color: #F1B508
+
+            &:hover
+              background-color: #B89F15
+
+          &:nth-child(even)
+            background-color: #1AABE6
+
+            &:hover
+              background-color: #0C77A2
+          
 
   &.dark-mode
     background-color: #252525

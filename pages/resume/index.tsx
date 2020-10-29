@@ -5,6 +5,7 @@ import { SettingOutlined } from '@ant-design/icons';
 import FixedIcon from '../../components/fixed-icon';
 import AboutMe from './about-me';
 import ExperienceAndEducation from './experience';
+import Skills from './skills';
 import './style.styl';
 
 const PREFIX_CLASS = 'resume';
@@ -27,6 +28,7 @@ export default function Resume() {
       <div className={`${PREFIX_CLASS}__right`}>
         <AboutMe />
         <ExperienceAndEducation />
+        <Skills />
       </div>
       <Modal
         title="Page Setting"
