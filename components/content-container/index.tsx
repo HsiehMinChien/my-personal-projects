@@ -15,7 +15,7 @@ function ContentContainer({
 }) {
   return (
     <div className={cx(PREFIX_CLASS, className)}>
-      <h2 className={`${PREFIX_CLASS}__title`}>{title}</h2>
+      {title && <h2 className={`${PREFIX_CLASS}__title`}>{title}</h2>}
       <div className={`${PREFIX_CLASS}__content`}>{children}</div>
     </div>
   );

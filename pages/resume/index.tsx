@@ -3,6 +3,7 @@ import { Modal, Switch } from 'antd';
 import cx from 'classnames';
 import { SettingOutlined } from '@ant-design/icons';
 import FixedIcon from '../../components/fixed-icon';
+import Home from './home';
 import AboutMe from './about-me';
 import ExperienceAndEducation from './experience';
 import Skills from './skills';
@@ -27,6 +28,7 @@ function Resume() {
         <div>left</div>
       </div>
       <div className={`${PREFIX_CLASS}__right`}>
+        <Home />
         <AboutMe />
         <ExperienceAndEducation />
         <Skills />
