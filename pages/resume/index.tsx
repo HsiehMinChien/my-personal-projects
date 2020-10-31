@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, memo } from 'react';
 import { Modal, Switch } from 'antd';
 import cx from 'classnames';
 import { SettingOutlined } from '@ant-design/icons';
@@ -10,7 +10,7 @@ import './style.styl';
 
 const PREFIX_CLASS = 'resume';
 
-export default function Resume() {
+function Resume() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isSettingModalVisible, setIsSettingModalVisible] = useState(false);
   const _handleCloseModal = useCallback(() => {
@@ -53,3 +53,5 @@ export default function Resume() {
     </div>
   );
 }
+
+export default memo(Resume);

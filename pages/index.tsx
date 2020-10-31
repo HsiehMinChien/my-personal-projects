@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import { compose } from "redux";
 import withApollo from "../lib/with-apollo";
 import { withRedux } from "../lib/redux";
@@ -59,18 +58,6 @@ function Home() {
   }
   return (
     <div className="number-analysis">
-      <Head>
-        <title>數字驗證網站</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-      </Head>
       <div>
         <AppBar title="手機數字磁場分析" onClickIconButton={setIsOpen} />
         <Drawer isOpen={isOpen} onClickListItem={setIsOpen} />

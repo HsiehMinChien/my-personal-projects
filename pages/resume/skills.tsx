@@ -26,7 +26,7 @@ const skillList = [
 function Skills() {
   return (
     <ContentContainer title="Skills" className="skills">
-      {skillList.map(skill => (<div className="detail">{skill}</div>))}
+      {skillList.map((skill, index) => (<div key={skill+index} className="detail">{skill}</div>))}
     </ContentContainer>
   );
 }
