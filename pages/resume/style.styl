@@ -13,15 +13,16 @@
   .setting-icon
     bottom: 90px
     right: 20px
-  
+
   .content-container
+    max-width: 680px
+
     & + .content-container
       margin-top: 30px
 
     &.about-me
       .content-container__content
         display: flex
-        margin-top: 25px
 
         img
           width: 150px
@@ -68,7 +69,6 @@
       .content-container__content
         display: flex
         flex-wrap: wrap
-        margin-top: 25px
 
         .detail
           font-size: 18px
@@ -91,7 +91,17 @@
 
             &:hover
               background-color: #0C77A2
-          
+
+    &.projects
+      .title
+        color: #0656D1
+        font-size: 20px
+        font-weight: 600
+        margin-top: 10px
+
+      .description
+        color: gray
+        font-size: 16px
 
   &.dark-mode
     background-color: #252525

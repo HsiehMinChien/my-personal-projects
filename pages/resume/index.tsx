@@ -6,6 +6,7 @@ import FixedIcon from '../../components/fixed-icon';
 import AboutMe from './about-me';
 import ExperienceAndEducation from './experience';
 import Skills from './skills';
+import Projects from './projects';
 import './style.styl';
 
 const PREFIX_CLASS = 'resume';
@@ -29,6 +30,7 @@ function Resume() {
         <AboutMe />
         <ExperienceAndEducation />
         <Skills />
+        <Projects />
       </div>
       <Modal
         title="Page Setting"
