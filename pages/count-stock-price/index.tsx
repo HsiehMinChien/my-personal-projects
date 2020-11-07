@@ -117,6 +117,7 @@ function getRange(endDate: Date, startDate: Date) {
   const startDay =
     startDateMoment.weekday() < 6 ? startDateMoment.weekday() : 5;
   let offsetDay = 0;
+  let diffOfYear = endDateMoment.year() - startDateMoment.year();
 
   if (
     endDateMoment.weekday() > 0 &&
@@ -127,5 +128,9 @@ function getRange(endDate: Date, startDate: Date) {
     offsetDay = 1;
   }
 
-  return diffOfWeek * 5 + endDay - startDay + offsetDay;
+  if (diffOfWeek < 0 && diffOfYear === 0) {
+    diffOfYear += 1;
+  }
+
+  return (diffOfYear * 52 + diffOfWeek) * 5 + endDay - startDay + offsetDay;
 }
