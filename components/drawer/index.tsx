@@ -9,9 +9,7 @@ import MailIcon from "@material-ui/icons/Mail";
 
 const DrawerItemList = [
   { text: "手機數字分析", path: "/" },
-  { text: "車牌分析", path: "/" },
-  { text: "日曆", path: "/count-stock-price" },
-  { text: "履歷", path: "/resume" },
+  { text: "日曆計價表", path: "/count-stock-price" },
 ];
 
 function CostomizeDrawer({

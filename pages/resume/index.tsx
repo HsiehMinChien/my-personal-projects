@@ -25,14 +25,17 @@ function Resume() {
   return (
     <div className={cx(PREFIX_CLASS, { 'dark-mode': isDarkMode })}>
       <div className={`${PREFIX_CLASS}__left`}>
-        <div>left</div>
+        <div>
+        </div>
       </div>
       <div className={`${PREFIX_CLASS}__right`}>
-        <Home />
-        <AboutMe />
-        <ExperienceAndEducation />
-        <Skills />
-        <Projects />
+        <div>
+          <Home />
+          <AboutMe />
+          <ExperienceAndEducation />
+          <Skills />
+          <Projects />
+        </div>
       </div>
       <Modal
         title="Page Setting"

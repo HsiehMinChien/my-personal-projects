@@ -9,6 +9,10 @@
 
   &__right
     width: 60%
+    > div
+      height: calc(100vh - 60px)
+      overflow: auto
+      max-width: 685px
 
   .setting-icon
     bottom: 90px
@@ -21,10 +25,10 @@
       margin-top: 30px
     
     &.home
+      padding: 0
       background-image: url('https://avatars0.githubusercontent.com/u/32015904?s=400&u=018f30fa634d9c6b16f8cf401c652c73fb55e7e5&v=4')
       background-attachment: fixed
-      background-size: cover
-      padding: 0
+      background-size: contain
 
       > div
         padding: 210px 35px
